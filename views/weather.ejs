@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
+        body{
+            font-family: 'Hind', sans-serif;
+        }
+        #temp{
+            font-size: 35px;
+        }
+        #navbar span{
+            float: left;
+            display: block;
+        }
+        #anchors{
+            padding: 20px 16px;
+            margin-left: 30px;
+        }
+        #anchors a{
+            text-decoration: none;
+            font-size: 17px;
+            color: black;
+        }
+        #anchors :hover{
+            border-bottom: 2px solid #61320a;
+        }
+        #title{
+            font-size: 27px;
+            padding: 25px 20px;
+            line-height: 15px;
+        }
+        #services{
+            display: flex;
+            justify-content: center;
+            height: 30px;
+        }
+        #services span{
+            float: left;
+            padding: 0px 35px;
+        }
+        /* #services img{
+            height: 70px;
+            width: 10px;
+        } */
+        #services #plans:hover{
+            content: url(https://img.icons8.com/ios/50/743906/notepad.png);
+        }
+        #services #hotels:hover{
+            content: url(https://img.icons8.com/ios/50/743906/5-star-hotel--v2.png);
+        }
+        #services #location:hover{
+            content: url(https://img.icons8.com/material-outlined/48/743906/marker.png);
+        }
+        #services #landmarks:hover{
+            content: url(https://img.icons8.com/ios/50/743906/place-marker--v1.png);
+        }
+        #services #train:hover{
+            content: url(https://img.icons8.com/fluency-systems-regular/48/743906/train.png);
+        }
+        #services #flight:hover{
+            content: url(https://img.icons8.com/ios/50/743906/airplane-take-off.png);
+        }
+        #services #bus:hover{
+            content: url(https://img.icons8.com/ios/50/743906/bus2.png);
+        }
+        #services #cabs:hover{
+            content: url(https://img.icons8.com/ios/50/743906/hatchback.png);
+        }
+
+
+        figcaption{
+            font-size: 12px;
+        }
+        #searchbar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://plus.unsplash.com/premium_photo-1670897797720-ba9ac2ce5c8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 500px;
+            width: 1250px;
+        }
+        #quote p{
+            color: white;
+            /*font-family: 'Josefin Slab', serif;*/
+            font-family: 'Allura', cursive;
+            font-size: 40px;
+        }
+        .loc{
+            border: 0;
+            background: transparent;
+            text-align: center;
+            padding: 2px;
+            width: 300px;
+            height: 60px;
+            font-size: 20px;
+            outline: none;
+        }
+        .locations{
+            border-radius: 40px;
+            background-color: white;
+            display: inline-block;
+        }
+        .locations button{
+            border: none;
+            background: transparent;
+        }
+        #searchbtn{
+            background-color: #7b3f00;
+            border-radius: 30px;
+            height: 50px;
+            width: 80px;
+            font-size: 17px;
+            margin-right: 10px;
+        }
+        #searchicon{
+            margin-left: 20px;
+        }
+        #seconddiv{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 20px;
+            background-image: linear-gradient(to left,#743906,#cb8648,#743906);
+        }
+        /*#seconddiv div, #thirddiv div{
+            flex: 1;
+        }*/
+        #seconddiv div p, #thirddiv div p{
+            font-size: 40px;
+            font-family: 'Ysabeau Office', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+        } 
+        #seconddiv img,#thirddiv img{
+            height: 500px;
+            width: 600px;
+        }
+        #serviceinfo{
+            display: flex;
+            flex-direction: row;
+        }
+        #serviceinfo img{
+            height: 200px;
+            width: 300px;
+        }
+        #midpart{
+            display: flex;
+            border-right: 2px solid #743906;
+        }
+        #circlepart{
+            flex: 1;
+            height: 500px;
+            background-color: #743906;
+            border-radius: 0 50% 50% 0;
+            position: relative;
+        }
+        /* #circle1{
+            position: absolute;
+            left: 330px;
+            top: 160px;
+            height: 350px;
+            width: 350px;
+            background-color: #e5b58b;
+            border-radius: 50%;
+        }
+        #circle2{
+            position: absolute;
+            left: 500px;
+            top: 130px;
+            height: 200px;
+            width: 200px;
+            background-color: #8d4b11;
+            border-radius: 50%;
+        } */
+        #circlepart img{
+            border-radius: 0 50% 50% 0;
+            margin-top: 20px;
+            height: 460px;
+            width: 570px;
+            position: absolute;
+            z-index: 99;
+        }
+        #midpart #midquote{
+            flex: 1;
+        }
+        #midquote p{
+            font-size: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+            font-family: 'Ysabeau Office', sans-serif;
+        }
+        #foot{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        #india{
+            background: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.9)),url(https://live.staticflickr.com/4123/4820095072_ecc86edddb_b.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+            width: 1250px;
+        }
+        #welcome{
+            padding-top: 200px;
+            font-size: 30px;
+            color: white;
+            margin-left: 50px;
+            font-family: 'Playfair Display', serif;
+        }
+        /* #culture img{
+            height: 500px;
+            width: 1250px;
+            position: relative;
+            opacity: 0.7;
+            z-index: -1;
+        }
+        #culture p{
+            
+            top: 50%;
+            font-size: 45px;
+            margin-top: 150px;
+            font-family: 'Ysabeau Office', sans-serif;
+        } */
+        #namaste{
+            display: flex;
+        }
+        #namaste #namasteimg{
+            flex: 0.5;
+        }
+        #namaste #seva{
+            flex: 1;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Ysabeau Office', sans-serif;
+        }
+        #tourist{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        #attractions{
+            height: 500px;
+            width: 400px;
+            padding: 10px;
+        }
+        .red{
+            border-right: 1px solid #743906;
+            border-left: 1px solid #743906;
+        }
+        #attractions img{
+            height: 250px;
+            width: 300px;
+        }
+        #foot a{
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        #foot a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="navbar">
+        <img width="160" height="130" src="https://i.ibb.co/y0tG99s/Screenshot-22-Photo-Room-png-Photo-Room.png" alt="Screenshot-22-Photo-Room-png-Photo-Room" border="0" style="float: left;"/>
+        <span id="anchors"><a href="#">About</a></span>
+        <span id="anchors"><a href="/currencyconverter">Currency Converter</a></span>
+        <span id="anchors"><a href="#">Help</a></span>
+        <span style="float: right; padding: 7px 16px;"><img width="50" height="50" src="https://img.icons8.com/ios-glyphs/60/743906/user-male-circle.png" alt="user-male-circle"/></span>
+    </div><br><br><br><hr>
+    <div id="services">
+        <div>
+            <span><a href="/akbartravels"><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/743906/notepad.png" alt="notepad" id="plans"/></a><figcaption>Tour plans</figcaption></span>
+            <span><a href="/location"><img width="30" height="30" src="https://img.icons8.com/material-rounded/48/743906/marker.png" alt="marker" id="location"/></a><figcaption>Location</figcaption></span>           
+            <span><a href="/hotels"><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/743906/5-star-hotel--v1.png" alt="5-star-hotel" id="hotels"/></a><figcaption>Hotels</figcaption></span>
+        <span><a href="/nearbyplaces"><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/743906/place-marker--v1.png" alt="point-objects" id="landmarks"/></a><figcaption>Landmarks</figcaption></span>
+        <span><a href="/railway"><img width="30" height="30" src="https://img.icons8.com/fluency-systems-filled/48/743906/train.png" alt="train" id="train"/></a><figcaption>Train</figcaption></span>
+        <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/743906/airplane-take-off.png" alt="airplane-take-off" id="flight"/><figcaption>Flight</figcaption></span>
+        <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/100/743906/bus2.png" alt="bus2" id="bus"/><figcaption>Bus</figcaption></span>
+        <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/100/743906/hatchback.png" alt="hatchback" id="cabs"/><figcaption>Cabs</figcaption></span>
+        <!-- <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/100/743906/auto-rickshaw.png" alt="auto-rickshaw"/><figcaption>Auto</figcaption></span> -->
+        
+    </div>
+    </div>
+    <div id="india">
+        <p id="welcome">WELCOME TO <br><span style="font-size: 150px; font-family: 'Playfair Display', serif;"><b>I&nbsp;N&nbsp;D&nbsp;I&nbsp;A</b></span></p>
+    </div><br><br>
+    <!-- <div id="namaste">
+        <div id="namasteimg"><img src="https://images.meesho.com/images/products/18620353/d4a96_512.webp" width="270px" height="300px"></div>
+        <div id="seva">
+            <b>Make you adventure easier with us<br>You can find routes, famous places, get transportation info and a lot more....</b>
+        </div>
+    </div> -->
+    <h2>Most Famous Tourist attractions</h2><br>
+    <div id="tourist">
+        <div id="attractions">
+            <center><img src="https://www.planetware.com/photos-large/IND/india-top-attractions-taj-mahal.jpg">
+            <h2>Taj Mahal</h2>
+            <p>Majestically located on the banks of Yamuna River, this wonder of the world was built by the Mughal Emperor Shah Jahan as a memorial for his beloved wife Mumtaz Mahal.</p></center>
+        </div>
+        <div id="attractions" class="red">
+            <center><img src="https://plus.unsplash.com/premium_photo-1661919589683-f11880119fb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmVkJTIwZm9ydHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80">
+            <h2>Red Fort</h2>
+            <p>Located in Chandni Chowk Old Delhi, this red sandstone structure was constructed under the reign of Mughal emperor Shah Jahan for protection against invaders.</p></center>
+        </div>
+        <div id="attractions">
+            <center><img src="https://www.whyweseek.com/wp-content/uploads/2020/01/facebook-amritsar.jpg">
+            <h2>Golden Temple</h2>
+            <p>Also known as Sri Harmandir Sahib, Golden Temple is considered to be the most important pilgrimage site amongst Sikhs and will leave you in awe with its jaw-dropping gold and marble edifice.</p></center>
+        </div>
+    </div>
+    <br>
+    <div id="searchbar">
+        <div id="quote">
+            <center>
+            <p><span style="font-size: 80px;">To Travel is to Live</span><br>
+            Explore the nation of diverse cultures with us!!!</p></center>
+        </div>
+    </div>
+    <!-- <div id="seconddiv">
+        <div><p>We Provide<br>World Top Destinations<br>for you</p></div>
+        <div><img src="https://images.adsttc.com/media/images/5a2a/d784/b22e/3819/db00/021f/newsletter/BeFunky_Collage.jpg?1512757113"></div>
+         <div><p><b>Make your adventure easier by knowing the<br> most familiar places in the places you don't know :)</b></p>
+        </div>
+        <div id="sd"><img src="https://images.pexels.com/photos/13871565/pexels-photo-13871565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></div>
+        <div><img src="https://img.freepik.com/free-vector/navigation-concept-illustration_114360-956.jpg?w=740&t=st=1697281606~exp=1697282206~hmac=85d39377238c33a9491c54f58784e9071ea3fd734b4d3d1d31d7545e4c1e4087">
+        <p>Oh no!!! Can't you find the way to reach your destination?<br>Don't worry....we are here to help you</p></div>
+    </div> -->
+    <!-- <div id="culture">
+        <div>
+        <p>India is the symbol of peace, spirituality, and enlightenment</p>
+        <img src="https://o.remove.bg/downloads/f05e0063-e051-465a-a0ee-58649446f0fd/shutterstock_465558758-illustration-of-India-background-showing-its-culture-and-diversity-with-monument-dance-and-festival-removebg-preview.png">
+        </div>
+    </div> -->
+    <!-- <div id="midpart">
+        <div id="circlepart">
+            <img src="https://img.freepik.com/free-photo/young-cheerful-travelers-with-backpacks-smiling-walking-canyon_176420-4226.jpg?w=900&t=st=1697015927~exp=1697016527~hmac=676d9c344a86c3b045b9f19b4dcebc49b5170b2bbdb92a80341b12d26814f004">
+            <div id="circle1">
+                
+            </div>
+            <div id="circle2"></div>
+
+        </div>
+        <div id="midquote">
+            <p><b>" Travel far enough <br>&emsp;&emsp;to<span style="color: #743906;"> meet yourself</span> "</b></p>
+        </div>
+    </div></div>--><br>
+    
+    <!-- <div>
+        <button id="sp"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/7b3f00/microphone--v1.png" alt="microphone--v1"/></button>
+    </div> -->
+    <footer>
+        <section>
+            <img width="160" height="130" src="https://i.ibb.co/y0tG99s/Screenshot-22-Photo-Room-png-Photo-Room.png" alt="Screenshot-22-Photo-Room-png-Photo-Room" border="0" style="float: left;"/>
+            <div id="foot">
+            <div id="connect">Connect with us<br><br>
+                <nav>
+                    <a href=""><img width="30" height="30" src="https://img.icons8.com/material-outlined/48/743906/youtube-play--v1.png" alt="youtube-play--v1" class="icon"/></a>&emsp;
+                    <a href=""><img width="30" height="30" src="https://img.icons8.com/windows/64/743906/instagram-new.png" alt="instagram-new" class="icon"/></a>&emsp;
+                    <a href=""><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/48/743906/facebook-new--v1.png" alt="facebook-new--v1" class="icon"/></a>&emsp;
+                    <a href=""><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/48/743906/twitter.png" alt="twitter" class="icon"/></a>&emsp;
+                </nav>
+            </div>
+            <div id="help"><a href="#">Help</a><br><br><a href="/login">Login</a><br><br><a href="#">Settings</a></div>
+            <div><a href="#con1">About Us</a><br><br><a href="#">Contact Us</a><br><br><a href="#">How the site works??</a></div>
+            </div>
+        </section>
+    </footer>
+        <script>
+            const btn = document.querySelector(".btn");
+            const content = document.querySelector(".content");
+            function speak(text){
+                let text_speak = new SpeechSynthesisUtterance(text);
+                text_speak.rate = 1;
+                text_speak.pitch = 1;
+                text_speak.volume = 1;
+                window.speechSynthesis.speak(text_speak);
+            }
+
+            sp.addEventListener('click',()=>{
+                speak("Hello Charishma");
+            });
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+            recognition.onresult = (event)=>{
+                const currentIndex = event.resultIndex;
+                const transcript = event.results[currentIndex][0].transcript;
+                element.value = transcript;
+                takeCommand(textContent);
+            }
+            let callOne = true;
+            function one(){
+                element = document.getElementById("source");
+                element.placeholder = "Listening....."
+                recognition.start();
+            }
+            function two(){
+                element = document.getElementById("destination");
+                element.placeholder = "Listening....."
+                recognition.start();
+            }
+            function call(){
+                if(callOne) one();
+                else two();
+                callOne = !callOne;
+            }
+
+            function takeCommand(){}
+
+        </script>
+</body>
+</html>

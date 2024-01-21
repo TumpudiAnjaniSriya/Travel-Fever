@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Currency Converter</title>
+    <style>
+      #maindiv{
+        font-size:23px;
+        background-color:grey;
+        padding-top:50px;
+        height:550px;
+        width:500px;
+        text-align:center;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%)
+      }
+      #opt{
+        width:300px;
+        height:40px;
+        font-size:15px;
+        border:1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+    <div id="maindiv">
+    <form method="POST" action="/currencyconverter">
+      Enter amount to be converted:<br><br>
+    <input type="number" placeholder="Enter a value" name="amount" id="opt"><br><br>
+      From:<br><br>
+    <select name="from" id="opt">
+      <option>INR</option>
+      <option>USD</option>
+      <option>EUR</option>
+      <option>GBP</option>
+      <option>SGD</option>
+      <option>RUB</option>
+      <option>MYR</option>
+    </select><br><br>
+      To:<br><br>
+    <select name="to" id="opt">
+      <option>INR</option>
+      <option>USD</option>
+      <option>EUR</option>
+      <option>GBP</option>
+      <option>SGD</option>
+      <option>RUB</option>
+      <option>MYR</option>
+    </select><br><br>
+    <button>Submit</button></form>
+      <p><%=a%>&nbsp;<%=fr%> = <%=val%>&nbsp;<%=to%></p>
+    </div></div>
+    
+  </body>
+</html>

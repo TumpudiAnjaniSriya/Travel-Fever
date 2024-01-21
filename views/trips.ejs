@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+            font-family: 'Hind', sans-serif;
+      }
+      #tourpacks{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
+      }
+      #subdivs{
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px 5px #c3c1c1;
+      }
+      #links{
+        color: black;
+        text-decoration: none;
+      }
+      #links:hover{
+        border-bottom: 2px solid #743906;
+      }
+        #temp{
+            font-size: 35px;
+        }
+        #navbar span{
+            float: left;
+            display: block;
+        }
+        #anchors{
+            padding: 20px 16px;
+            margin-left: 30px;
+        }
+        #anchors a{
+            text-decoration: none;
+            font-size: 17px;
+            color: black;
+        }
+        #anchors :hover{
+            border-bottom: 2px solid #61320a;
+        }
+        #title{
+            font-size: 27px;
+            padding: 25px 20px;
+            line-height: 15px;
+        }
+        #services{
+            display: flex;
+            justify-content: center;
+            height: 30px;
+        }
+        #services span{
+            float: left;
+            padding: 0px 35px;
+        }
+        #services span:hover{
+            background-color: grey;
+            border-radius: 50%;
+        }
+        figcaption{
+            font-size: 12px;
+        }
+        /* #searchbar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url(https://plus.unsplash.com/premium_photo-1670897797720-ba9ac2ce5c8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            height: 500px;
+            width: 1250px;
+        } */
+        #foot{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        #foot a{
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        #foot a:hover{
+            text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <img width="160" height="130" src="https://i.ibb.co/y0tG99s/Screenshot-22-Photo-Room-png-Photo-Room.png" alt="Screenshot-22-Photo-Room-png-Photo-Room" border="0" style="float: left;"/>
+      <span id="anchors"><a href="#">About</a></span>
+      <span id="anchors"><a href="/currencyconverter">Currency Converter</a></span>
+      <span id="anchors"><a href="#">Help</a></span>
+      <span style="float: right; padding: 7px 16px;"><img width="50" height="50" src="https://img.icons8.com/ios-glyphs/60/743906/user-male-circle.png" alt="user-male-circle"/></span>
+  </div><br><br><br><hr><br>
+  <div id="services">
+    <div>
+        <span><a href="/akbartravels"><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/743906/notepad.png" alt="notepad"/></a><figcaption>Tour plans</figcaption></span>
+        <span><a href="/hotels"><img width="30" height="30" src="https://img.icons8.com/sf-black-filled/64/743906/5-star-hotel.png" alt="5-star-hotel"/></a><figcaption>Hotels</figcaption></span>
+    <span><a href="/location"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/743906/marker.png" alt="marker"/></a><figcaption>Location</figcaption></span>
+    <span><a href="/nearbyplaces"><img width="30" height="30" src="https://img.icons8.com/glyph-neue/64/743906/point-objects.png" alt="point-objects"/></a><figcaption>Landmarks</figcaption></span>
+    <span><a href="/railway"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/60/743906/train.png" alt="train"/></a><figcaption>Train</figcaption></span>
+    <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/743906/airplane-take-off.png" alt="airplane-take-off"/><figcaption>Flight</figcaption></span>
+    <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/100/743906/bus2.png" alt="bus2"/><figcaption>Bus</figcaption></span>
+    <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/100/743906/hatchback.png" alt="hatchback"/><figcaption>Cabs</figcaption></span>
+    <!-- <span><img width="30" height="30" src="https://img.icons8.com/ios-filled/100/743906/auto-rickshaw.png" alt="auto-rickshaw"/><figcaption>Auto</figcaption></span> -->
+</div></div><br><br><br><br>
+    <!-- <h2>Tour Plans </h2> -->
+    <div id="tourpacks">
+        <% for(let i=0; i<array.length ;i++) { %>
+          <div id="subdivs">
+          <h3><a href="<%=array[i].link%>" id="links"><%=array[i].title%></a></h3>
+          <p>
+            <%=array[i].duration%><br>
+            <%=array[i].places%>
+          </p>
+    </div>
+        <%}%>
+        </div><br><br>
+        <footer>
+          <section>
+              <img width="160" height="130" src="https://i.ibb.co/y0tG99s/Screenshot-22-Photo-Room-png-Photo-Room.png" alt="Screenshot-22-Photo-Room-png-Photo-Room" border="0" style="float: left;"/>
+              <div id="foot">
+              <div id="connect">Connect with us<br><br>
+                  <nav>
+                      <a href=""><img width="30" height="30" src="https://img.icons8.com/material-outlined/48/743906/youtube-play--v1.png" alt="youtube-play--v1" class="icon"/></a>&emsp;
+                      <a href=""><img width="30" height="30" src="https://img.icons8.com/windows/64/743906/instagram-new.png" alt="instagram-new" class="icon"/></a>&emsp;
+                      <a href=""><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/48/743906/facebook-new--v1.png" alt="facebook-new--v1" class="icon"/></a>&emsp;
+                      <a href=""><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/48/743906/twitter.png" alt="twitter" class="icon"/></a>&emsp;
+                  </nav>
+              </div>
+              <div id="help"><a href="#">Help</a><br><br><a href="/login">Login</a><br><br><a href="#">Settings</a></div>
+              <div><a href="#con1">About Us</a><br><br><a href="#">Contact Us</a><br><br><a href="#">How the site works??</a></div>
+              </div>
+          </section>
+      </footer>
+  </body>
+</html>

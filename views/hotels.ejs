@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Mulish:wght@300&family=Open+Sans:wght@600&family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+         #navbar span{
+            float: left;
+            display: block;
+           
+        }
+        body{
+            font-family: 'Nunito', sans-serif;
+        }
+        #temp{
+            font-size: 35px;
+        }
+        #navbar span{
+            float: left;
+            display: block;
+        }
+        #anchors{
+            padding: 20px 16px;
+        }
+        #anchors a{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+        #anchors :hover{
+            border-bottom: 2px solid #61320a;
+        }
+        #title{
+            font-size: 27px;
+            padding: 25px 20px;
+            line-height:15px;
+        }
+        #parent{
+            display: flex;
+            flex-direction: row;
+            height: 530px;
+            width:100%;
+            background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0, 0.8)),url("https://www.hotelierindia.com/public/images/2020/11/04/Image-2---Hilton-Goa-Resort_Lounge-Pool.jpg");
+            justify-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+            background-position: center;
+            background-size: cover;
+        }
+        #child{
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: #eaddd1;
+            border-radius: 10px;
+            height: 330px;
+            width:350px;
+        }
+        #inputbox{
+            height: 30px;
+            width:200px;
+            border-radius: 5px;
+            border: none;
+        }
+        .my-button {
+            /* Set the background color */
+            background-color: #743906;
+            /* Set the text color */
+            color: white;
+            /* Add padding to the button */
+            padding: 10px 20px;
+            /* Set a border */
+            border: none;
+            /* Add a little border radius to round the corners */
+            border-radius: 5px;
+            /* Add a pointer cursor to indicate interactivity */
+            cursor: pointer;
+        }
+        #q{
+            font-size: 50px;
+            color: aliceblue;
+            font-family: 'Allura', cursive;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap:10px;
+            background-color: #e3e6e8;
+            padding: 5px;
+            }
+            .grid-item {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 5px;
+                font-size: 15px;
+                border-radius: 10px;
+                }
+            #gap{
+                margin-left: 50px;
+            }
+            #gap1{
+                font-family: 'DM Sans', sans-serif;
+                font-family: 'Mulish', sans-serif;
+                font-family: 'Open Sans', sans-serif;
+                font-family: 'Poppins', sans-serif;
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+            }
+    </style>
+</head>
+<body>
+    <div id="bg">
+        <div id="navbar">
+            <img width="160" height="130" src="https://i.ibb.co/y0tG99s/Screenshot-22-Photo-Room-png-Photo-Room.png" alt="Screenshot-22-Photo-Room-png-Photo-Room" border="0" style="float: left;"/>
+            <span id="anchors"><a href="/akbartravels">Tour Plans</a></span>
+            <span id="anchors"><a href="/currencyconverter">Currency Converter</a></span>
+            <span style="float: right; padding: 7px 16px;"><img width="40" height="40" src="https://img.icons8.com/metro/26/743906/home.png" alt="home"/></span>
+        </div><br><br><br><hr>
+        <div id="parent">
+                <form method="post" action="/hotels">
+                    <div id="child">
+                    <h2>Get hotel details</h2>
+                    <input type="text" name="location" placeholder="Enter location" id="inputbox">
+                    <input type="date" name="checkin" placeholder="checkindate" id="inputbox">
+                    <input type="date" name="checkout" placeholder="checkoutdate" id="inputbox">
+                    <button class="my-button">click</button>
+                </div>
+                </form>
+            
+            <div>
+                <p id="q">A hotel isn't like a home, but it's<br>better than being a house guest</p>
+            </div>
+        </div>
+        </div>
+   <div class="grid-container">
+    <%for(let i=0; i<hotels.length ;i++){%>
+        <div class="grid-item">
+        <center>
+        <p><img src="<%=hotels[i].propertyImage.image["url"]%>"height="200" width="300"></p>
+        <p id="gap1"><b><%=hotels[i]["name"]%></b></p>
+        </center>
+        <span><p id="gap">Roomsleft:  <%=hotels[i].availability["minRoomsLeft"]%></p></span>
+        <span><p id="gap">Distance:  <%=hotels[i].destinationInfo.distanceFromMessaging%></p></span>
+        
+        </div>
+    <%}%>
+    </div>
+</body>
+</html>
